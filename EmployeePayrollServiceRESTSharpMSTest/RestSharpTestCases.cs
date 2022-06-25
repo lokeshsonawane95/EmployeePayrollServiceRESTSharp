@@ -112,5 +112,18 @@ namespace EmployeePayrollServiceRESTSharpMSTest
              
             Console.WriteLine(response.Content);
         }
+
+        [TestMethod]
+        public void GivenEmployee_OnDelete_ShouldReturnSuccessStatus()
+        {
+             
+            RestRequest request = new RestRequest("employees/5", Method.DELETE);
+            
+            IRestResponse response = client.Execute(request);
+            
+            Console.WriteLine(response.Content);
+            
+            Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.OK);
+        }
     }
 }
