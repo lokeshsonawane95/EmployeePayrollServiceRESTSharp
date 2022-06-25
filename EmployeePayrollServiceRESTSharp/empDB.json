@@ -1,0 +1,29 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Lokesh Sonawane",
+      "salary": 45000
+    },
+    {
+      "id": 2,
+      "name": "Mohak Mangal",
+      "salary": 50000
+    },
+    {
+      "id": 3,
+      "name": "John Connor",
+      "salary": 75000
+    },
+    {
+      "id": 4,
+      "name": "Lok Son",
+      "salary": 100000
+    },
+    {
+      "id": 5,
+      "name": "Bruce Wayne",
+      "salary": 55000
+    }
+  ]
+}
