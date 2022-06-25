@@ -88,7 +88,29 @@ namespace EmployeePayrollServiceRESTSharpMSTest
                 Assert.AreEqual(employeeData.name, dataResponse.name);
                 Console.WriteLine(response.Content);
             });
+        }
 
+        [TestMethod]
+        public void GivenEmployee_OnUpdate_ShouldReturnUpdatedEmployee()
+        {
+            
+            RestRequest request = new RestRequest("employees/6", Method.PUT);
+            
+            JObject jobject = new JObject();
+            jobject.Add("name", "Lok");
+            jobject.Add("salary", 550000);
+            
+            request.AddParameter("application/json", jobject, ParameterType.RequestBody);
+            
+            IRestResponse response = client.Execute(request);
+            
+            Assert.AreEqual(response.StatusCode, System.Net.HttpStatusCode.OK);
+            
+            Employee dataResponse = JsonConvert.DeserializeObject<Employee>(response.Content);
+            
+            Assert.AreEqual(dataResponse.salary, "555000");
+             
+            Console.WriteLine(response.Content);
         }
     }
 }
